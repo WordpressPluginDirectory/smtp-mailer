@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SMTP Mailer
-Version: 1.1.15
+Version: 1.1.17
 Plugin URI: https://wphowto.net/smtp-mailer-plugin-for-wordpress-1482
 Author: naa986
 Author URI: https://wphowto.net/
@@ -16,8 +16,8 @@ if (!defined('ABSPATH')){
 
 class SMTP_MAILER {
     
-    var $plugin_version = '1.1.15';
-    var $phpmailer_version = '6.9.1';
+    var $plugin_version = '1.1.17';
+    var $phpmailer_version = '6.9.2';
     var $plugin_url;
     var $plugin_path;
     
@@ -218,7 +218,7 @@ class SMTP_MAILER {
     function server_info_settings()
     {
         $server_info = '';
-        $server_info .= sprintf('OS: %s%s', php_uname(), PHP_EOL);
+        //$server_info .= sprintf('OS: %s%s', php_uname(), PHP_EOL);  //undefined fatal error on some servers
         $server_info .= sprintf('PHP version: %s%s', PHP_VERSION, PHP_EOL);
         $server_info .= sprintf('WordPress version: %s%s', get_bloginfo('version'), PHP_EOL);
         $server_info .= sprintf('WordPress multisite: %s%s', (is_multisite() ? 'Yes' : 'No'), PHP_EOL);
